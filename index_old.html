@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Koppelen Openlayers CSS bestand -->
+    <link href="openlayers/ol.css" rel="stylesheet" />
+    <!-- Koppelen eigen CSS bestand -->
+    <link href="css/style_old.css" rel="stylesheet" />
+    <link href="css/popup.css" rel="stylesheet" />
+    
+    <title>Lessen engineer</title>
+</head>
+<body>
+    <main>
+        <header>
+            <button id='open-aside'>open</button>
+            <button id='close-aside'>close</button>
+            <h3 id='header-text-small'>Welkom</h3>
+            <h3 id='header-text-large'>Welkom bij mijn engineer lessen</h3>
+        </header>
+        <aside>
+            <div id='aside-content'>
+                <h4>Layerswitcher</h4>
+                <ul>
+                    <li><h5>Baselayers</h5>
+                        <ul id='baselayers'>
+                            <!-- <li><input type="radio" name="basemap"> Basemap 1</li>
+                            <li><input type="radio" name="basemap">Basemap 2</li> -->
+                        </ul>
+                    </li>
+                    <li><h5>Overlay layers</h5>
+                        <ul id='overlaylayers'>
+                            <!-- <li><input type="checkbox">Datalaag 1</li>
+                            <li><input type="checkbox">Datalaag 2</li>
+                            <li><input type="checkbox">Datalaag 3</li> -->
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            
+        </aside>
+
+        <section>
+            <div id='map'></div>
+            <div id="popup" class="ol-popup">
+                <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+                <div id="popup-content"></div>
+            </div>
+        </section>
+    </main>
+
+
+        <!-- Koppelen jQuery JS bestand -->
+        <script src="jquery/jquery-3.6.0.min.js"></script>
+        <!-- Koppelen Openlayers JS bestand -->
+        <script src="openlayers/ol.js"></script>
+        <!-- Koppelen eigen JS bestand -->
+        <script src="js/globals.js"></script>
+        <!-- <script src="js/data.js"></script> -->
+        <script src="js/map.js"></script>
+        <script src="js/layers.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/screenfunction.js"></script>
+    
+    
+</body>
+</html>

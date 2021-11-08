@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Koppelen Bootstrap CSS -->
+    <link href="bootstrap 5.1.1\bootstrap.min.css" rel="stylesheet">
+    <!-- Koppelen Openlayers CSS bestand -->
+    <link href="openlayers/ol.css" rel="stylesheet" />
+    <!-- Koppelen eigen CSS bestand -->
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/popup.css" rel="stylesheet" />
+    
+    <title>Lessen engineer</title>
+</head>
+<body>
+    <main>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark ak-bg-primary">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Engineer</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" data-bs-toggle="modal" data-bs-target="#lagenswitcher" aria-current="page" href="#lagenswitcher">Lagen</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#mappage">Kaart</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#uitleg">uitleg</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Dropdown link
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+          <div class="modal fade" id="lagenswitcher" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header ak-bg-primary">
+                  <h5 class="modal-title" id="exampleModalLabel">Lagenswitcher</h5>
+                  <button type="button" class="btn-close ak-bg-primary" data-bs-dismiss="modal" aria-label="Sluiten"></button>
+                </div>
+                <div class="modal-body">
+                  <ul>
+                      <li><h5>Baselayers</h5>
+                          <ul id='baselayers'>
+                              
+                          </ul>
+                      </li>
+                      <li><h5>Overlay layers</h5>
+                          <ul id='overlaylayers'>
+                              
+                          </ul>
+                      </li>
+                  </ul>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sluiten</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Popup Bootstrap -->
+          <!-- <div class="modal" tabindex="-1" id='feature-popup'>
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Modal title</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div id="popup-content"></div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Sluiten</button>
+                </div>
+              </div>
+            </div>
+          </div> -->
+          
+      
+        <section class="container-fluid full-height" id='mappage'>
+            <div id='map'></div>
+            <div id="popup" class="ol-popup">
+                <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+                <div id="popup-content"></div>
+            </div>
+        </section>
+        <section class="container-fluid full-height" id='uitleg'>
+            <h2>Uitleg</h2>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean semper turpis sit amet mi ultrices euismod. Aenean ultrices sed tellus rutrum pellentesque. Pellentesque purus eros, venenatis at odio sit amet, scelerisque aliquam mauris. Maecenas cursus quam ut nulla euismod, vitae aliquet justo tempor. Proin vitae felis luctus, commodo tellus ac, dapibus nisl. Ut et lacinia lorem. Curabitur maximus ullamcorper massa vitae blandit. Duis a orci eget justo ultrices blandit id nec velit. Aliquam erat volutpat.
+
+            Donec tristique vitae magna vitae egestas. In porta augue facilisis, tincidunt risus nec, commodo mauris. Vestibulum nec bibendum velit. In gravida turpis auctor tempus volutpat. Aliquam a lorem nec libero bibendum condimentum et et ante. Pellentesque accumsan, lacus id fermentum varius, odio libero molestie massa, at dapibus urna lorem id nisi. Nullam vitae luctus elit. Sed eget magna vel ex placerat sodales cursus nec ligula. In hac habitasse platea dictumst. Mauris at quam felis. Curabitur consectetur magna ligula, et iaculis ipsum vehicula quis. Praesent a orci accumsan, bibendum felis vitae, accumsan erat. Nunc sit amet orci vel sem ornare sagittis. Phasellus hendrerit aliquet metus.
+
+            Proin nibh quam, hendrerit ac diam pulvinar, aliquet accumsan velit. Aliquam sit amet iaculis massa, ut posuere ligula. Curabitur lacinia fermentum tincidunt. Quisque nisl lectus, scelerisque vel lacinia non, luctus in lacus. Integer cursus nec orci at auctor. Donec auctor velit at odio mattis bibendum. Sed in hendrerit elit. Nullam suscipit vel turpis quis auctor. Etiam nec nisi sodales felis elementum dignissim ut in felis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam mattis pharetra justo, sed mollis libero fringilla non. Quisque et bibendum turpis. Etiam facilisis magna sed lectus viverra, non pharetra nunc egestas. Donec gravida sodales sapien, vel aliquam erat mollis eu.
+
+            Phasellus nec venenatis magna, in tincidunt purus. Morbi non ornare eros. Morbi pellentesque nisl tempus nunc vehicula, ut hendrerit ipsum tincidunt. Aenean ac arcu elementum ex laoreet vulputate ac in nibh. Nullam in venenatis enim. Vivamus elementum lacinia diam sed venenatis. Nullam et quam sed nisl molestie pharetra quis at dui. Quisque vitae luctus libero. Duis maximus felis vitae urna vehicula, id convallis leo elementum. Proin sed justo ullamcorper, ullamcorper risus vitae, eleifend erat. Praesent id orci quis mauris condimentum pretium non in justo. Nunc eu urna a augue laoreet viverra. Etiam egestas enim ac mi eleifend feugiat. Morbi interdum lorem sodales, cursus ligula sed, tincidunt quam. Morbi pretium dignissim dignissim. Mauris sagittis sem nulla, at suscipit velit lobortis vitae.
+
+            Curabitur nec consectetur erat. Nullam volutpat urna id mollis faucibus. Quisque imperdiet ligula nec ex ornare, sed congue lorem sagittis. Nam turpis neque, volutpat non lorem nec, dictum mollis metus. Donec suscipit vitae dui et varius. Etiam quis fringilla justo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam varius vitae nulla at mollis. Sed pellentesque, massa sit amet pulvinar aliquam, purus purus fermentum lectus, eget mollis lectus massa at ex. 
+        </section>
+
+    </main>
+
+
+        <!-- Koppelen jQuery JS bestand -->
+        <script src="jquery/jquery-3.6.0.min.js"></script>
+        <!-- Koppelen Bootstrap JS -->
+        <script src="bootstrap 5.1.1/bootstrap.bundle.min.js"></script>
+        <!-- Koppelen Openlayers JS bestand -->
+        <script src="openlayers/ol.js"></script>
+        <!-- Koppelen eigen JS bestand -->
+        <script src="js/globals.js"></script>
+        <!-- <script src="js/data.js"></script> -->
+        <script src="js/styles.js"></script>
+        <script src="js/map.js"></script>
+        <script src="js/layers.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/screenfunction.js"></script>
+    
+    
+</body>
+</html>
